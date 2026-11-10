@@ -83,6 +83,7 @@ Target roles include AI Application Engineer, LLM Engineer, AI Agent Engineer, A
 The numbered lessons remain the daily source of truth. These companion documents close the gaps between lesson instructions and real project evidence:
 
 - [Project delivery map](PROJECT-DELIVERY-MAP.md): where each day's work belongs across ResearchAI, Research Agent, XiaoYa 2.0, standalone exercises, and job-search artifacts.
+- [Topic progression map](TOPIC-PROGRESSION.md): how recurring topics move from fundamentals to implementation, production measurement, and interview evidence.
 - [Production engineering implementation guide](COURSE-IMPLEMENTATION-GUIDE.md): one consistent local FastAPI lab for metrics, alerts, Docker, Compose, CI, security, configuration, caching, and production quality.
 - [Job-search evidence kit](JOB-SEARCH-EVIDENCE-KIT.md): concrete templates and rubrics for Days 49–60. It distinguishes notes from tested code, demos, and external feedback.
 - [Course audit](COURSE-AUDIT.md): scope, fixes, remaining verification boundaries, and next priorities.
