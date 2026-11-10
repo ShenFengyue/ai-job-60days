@@ -51,7 +51,7 @@ The production lessons share a consistent local target and are supported by [COU
 
 ## Historical material
 
-The former detailed blueprint is preserved in [CURRICULUM-ORIGINAL-BLUEPRINT.md](CURRICULUM-ORIGINAL-BLUEPRINT.md). It records the original design, but it is not the active day-by-day schedule. If it differs from a numbered lesson, follow `Lessons/`.
+Older planning documents that duplicated or conflicted with the live daily lessons have been removed. The numbered `Lessons/` files are the single source of truth.
 
 ## Quality boundary
 
