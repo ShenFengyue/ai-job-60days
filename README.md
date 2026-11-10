@@ -61,8 +61,9 @@ Every study day:
 
 ## Course files and how to use them
 
-- [60-day curriculum overview](CURRICULUM.md): overall learning path and project milestones.
-- [Daily study workbook](curriculum/ALL-DAYS.md): day-by-day goals, practice, deliverables, and acceptance criteria.
+- [Daily lessons (canonical)](Lessons/): the actual day-by-day teaching materials. Follow `Lessons/01.md` through `Lessons/60.md` in order; this folder is the source of truth for daily execution.
+- [60-day curriculum blueprint](CURRICULUM.md): the original high-level learning design. It may not reflect every change made to the live daily lessons; when day-level topics differ, follow `Lessons/`.
+- [Daily study workbook](curriculum/ALL-DAYS.md): supplementary workbook and historical planning material; do not use it to override the canonical daily lessons.
 - [Progress tracker](PROGRESS.md): current date mapping and completion evidence. The active reset is **2026-10-05 = Day 16**; do not use the old date mapping.
 - [Learning method](LEARNING-METHOD.md): daily learn-build-test-commit loop.
 - [Git for beginners](GIT-FOR-BEGINNERS.md): repository workflow for learners new to Git.
