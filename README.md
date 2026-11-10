@@ -20,13 +20,13 @@ This is intentionally an AI application / LLM engineering track rather than a mo
 
 | Days | Focus | Output |
 |---|---|---|
-| 1–7 | Python, Git, APIs, LLM basics | working mini-apps |
-| 8–14 | Embeddings + RAG | Research RAG v0 |
-| 15–21 | RAG engineering | Project 1 |
-| 22–30 | Tool Calling + Agents | Project 2 |
-| 31–40 | Product engineering | XiaoYa 2.0 |
-| 41–50 | Production engineering | hardened projects |
-| 51–60 | Interviews + job search | portfolio + interviews |
+| 1–7 | Python, Git, HTTP/API、LLM 基础与第一个小应用 | 可运行的 English Learning Assistant |
+| 8–15 | Embedding、向量检索、Chunking、RAG 与第一个部署项目 | ResearchAI / Mini RAG |
+| 16–23 | Tool Calling、Agent Loop、Agentic RAG、评估、追踪与成本意识 | 最小 Research Agent 与评估记录 |
+| 24–31 | FastAPI、Docker、CI、Web/RAG 工具、Hybrid Search、Agent 评估 | 可调用、可部署、可测试的 Agent 服务 |
+| 32–40 | 数据库、Streaming、可靠性、可观测性、容器与发布 | 产品化后端与 CI/CD 流水线 |
+| 41–50 | 安全、生产配置、缓存、后台任务、成本、评估与作品集发布 | 经过安全/质量检查的项目作品集 |
+| 51–60 | Transformer 基础、技术面试、系统设计、简历与求职反馈 | 面试证据与 30 天行动计划 |
 
 ## Daily learning materials
 
