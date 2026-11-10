@@ -64,7 +64,6 @@ DURATION = Histogram(
 @app.middleware("http")
 async def observe_requests(request: Request, call_next):
     started = time.perf_counter()
-    route = request.url.path
     status_code = 500
     try:
         response = await call_next(request)
@@ -73,7 +72,7 @@ async def observe_requests(request: Request, call_next):
     finally:
         # Avoid raw IDs and query strings in labels: they create high cardinality.
         matched_route = request.scope.get("route")
-        route_label = getattr(matched_route, "path", route)
+        route_label = getattr(matched_route, "path", "unmatched")
         status_class = f"{status_code // 100}xx"
         REQUESTS.labels(request.method, route_label, status_class).inc()
         DURATION.labels(request.method, route_label).observe(
@@ -144,8 +143,11 @@ groups:
     rules:
       - alert: HighServerErrorRate
         expr: |
-          sum(rate(http_requests_total{status_class="5xx"}[5m]))
-          / clamp_min(sum(rate(http_requests_total[5m])), 1) > 0.05
+          (
+            sum(rate(http_requests_total{status_class="5xx"}[5m]))
+            / clamp_min(sum(rate(http_requests_total[5m])), 0.000001)
+          ) > 0.05
+          and sum(rate(http_requests_total[5m])) > 0.1
         for: 2m
         labels:
           severity: warning
