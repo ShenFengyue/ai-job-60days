@@ -1,107 +1,92 @@
-# AI Job 60 Days — Course Audit
+# AI Job 60 Days — Course Audit and Revision Record
 
-**Audit date:** 2026-11-11  
-**Scope:** Static review of `Lessons/01.md`–`Lessons/60.md`, `README.md`, `CURRICULUM.md`, and `PROGRESS.md`. This is a content and consistency review; it does not claim that every code sample has been executed or every external link has been tested end-to-end.
+**Revision date:** 2026-11-11  
+**Scope:** Static review and repository edits covering `Lessons/01.md`–`Lessons/60.md`, README, curriculum index, progress tracker, and supporting course guides.
 
 ## Executive result
 
-- All 60 numbered lesson files exist and are non-empty.
-- The actual dated lesson sequence is now explicitly designated as `Lessons/` in the README.
-- Day 44 was a duplicate of Day 46 and has been replaced with the intended Background Jobs lesson.
-- Day 2 now uses the current official DeepSeek model identifier `deepseek-flash`.
-- The README's phase table now describes the actual lesson sequence rather than the older blueprint.
+The course has been revised to address the major content-structure issues found in the previous audit:
 
-## Corrections made in this audit
+- The 60 numbered lesson files remain the canonical daily source.
+- The stale detailed curriculum has been preserved as historical material; `CURRICULUM.md` is now a current high-level index aligned with the live course.
+- A project delivery map assigns lesson outputs to ResearchAI, Research Agent, XiaoYa 2.0, standalone exercises, or job-search artifacts.
+- A topic progression map explains why recurring topics reappear and what new capability each pass adds.
+- Production lessons now share a consistent local FastAPI lab path for metrics, alerts, containers, Compose, CI, security, API structure, caching, and production-quality integration.
+- Days 49–60 now link to explicit evidence templates and scoring rubrics.
+- Lesson-level progression/evidence notes were added to Days 36–43, 45–60.
 
-### 1. Day 44 duplicate removed
+## Repository changes made in this revision
 
-The former `Lessons/44.md` was a copy of the Day 46 cost-engineering lesson, including the November 4 / Day 46 date. It has been replaced with **Background Jobs** (November 2 / Day 44), matching the original curriculum intent.
+### New documents
 
-The replacement teaches:
-- synchronous request vs FastAPI BackgroundTasks vs independent Worker/Queue;
-- task IDs and lifecycle states;
-- retries, idempotency, timeouts, dead-letter handling;
-- a deliberately limited in-memory teaching example;
-- why durable work needs persistent task state and an independent worker.
+1. `COURSE-IMPLEMENTATION-GUIDE.md` — one consistent FastAPI target and reproducible local procedures for Days 36–48.
+2. `JOB-SEARCH-EVIDENCE-KIT.md` — concrete templates, scoring rubrics, and evidence rules for Days 49–60.
+3. `PROJECT-DELIVERY-MAP.md` — maps each phase to the three flagship projects and defines feature-level completion.
+4. `TOPIC-PROGRESSION.md` — distinguishes first principles, integration, production measurement, and interview evidence for recurring topics.
+5. `CURRICULUM-ORIGINAL-BLUEPRINT.md` — preserves the former detailed blueprint for historical reference.
 
-### 2. Daily source of truth clarified
+### Updated documents
 
-The README now states that `Lessons/01.md`–`Lessons/60.md` are the canonical day-by-day materials. `CURRICULUM.md` is the original curriculum blueprint; where it differs from the live lesson sequence, follow `Lessons/`. This avoids silently pretending the two schedules are identical.
+- `CURRICULUM.md` — replaced the stale daily sequence with a canonical phase index and current date mapping.
+- `README.md` — links all guides and states that written notes are not proof of working functionality.
+- `Lessons/36.md`–`Lessons/43.md`, `Lessons/45.md`–`Lessons/60.md` — added progression or evidence links to the companion guides.
 
-### 3. README phase map corrected
+Earlier corrections remain in place:
+- Day 44 is Background Jobs, not a duplicate of Day 46.
+- Day 2 uses the current DeepSeek model identifier `deepseek-flash` in the sample.
+- README identifies `Lessons/` as the canonical daily course.
 
-The phase table now reflects the actual progression: foundations; RAG; tools and agents; API/deployment/retrieval engineering; product/production engineering; and interview/job-search preparation.
+## Problems addressed
 
-### 4. Day 2 model identifier corrected
+### 1. Uneven teaching depth and reproducibility
 
-The sample now uses `deepseek-flash`. The former `deepseek-v4-flash` identifier is retained by the provider only for compatibility with a retired model generation; new examples should use the current identifier.
+The production engineering guide now gives a consistent runnable target, a working FastAPI metrics example, Prometheus scrape configuration, alert-rule validation, Docker/Compose assumptions, CI security boundaries, test requirements, and cache correctness checks.
 
-## Findings that remain for a deeper revision
+This does not mean every lesson is now a full textbook chapter. The guide is a shared implementation companion to reduce repeated boilerplate and keep the daily lessons focused.
 
-### A. Lesson depth is uneven
+### 2. Repeated topics without clear progression
 
-The early lessons (especially Days 1–15 and several of Days 16–31) tend to include fuller explanations, implementation steps, experiments, deliverables, and acceptance criteria. A number of later lessons (particularly Days 36–43 and 49–60) are much shorter. They are useful as guided task sheets, but not all of them yet function as standalone beginner-friendly textbook chapters.
+The new progression map clarifies:
+- reranking: Day 13 fundamentals → Day 29 integrated use/evaluation → Day 52 interview evidence;
+- tool calling/agents: Day 16 primitive → later loop/state/reliability integration → Day 53 interview evidence;
+- observability: single trace → service integration → metrics/alerts → cross-request investigation;
+- cost: early awareness → unit economics → evaluation of quality/cost trade-offs;
+- evaluation: retrieval set → agent tasks → regression harness → readiness evidence.
 
-**Recommended fix:** Expand the short lessons with one worked example, explanation of each important code block, common failure cases, a test procedure, and a concrete acceptance check. Do not add length by adding more links or jargon.
+### 3. Weak project linkage
 
-### B. Repeated themes need explicit progression
+The project delivery map assigns each phase to a clear destination. Standalone exercises remain standalone unless there is a genuine reason to port them. This avoids copying every tutorial into all three portfolio projects.
 
-Some subjects appear more than once:
-- Tool calling / agent execution: Days 16–20 and again Days 30–31.
-- Reranking: Day 13 and Day 29.
-- Observability: Days 21, 31, 35–37 and 45.
-- Cost/performance: Day 22 and Day 46.
+### 4. Final-phase claims not backed by evidence
 
-These repetitions can be useful if each pass has a different level. The lessons should explicitly state the progression:
-- first principles → framework/project implementation → production measurement;
-- basic dense reranking → hybrid retrieval plus reranking;
-- application traces → service metrics/alerts → cross-system cost and failure analysis;
-- performance baseline → provider pricing and unit economics.
+The evidence kit requires code, tests, demos, sanitized traces, measured results, recordings/transcripts, application records, or feedback as appropriate. It distinguishes notes from working implementation and external validation.
 
-**Recommended fix:** Add a short “How this builds on earlier days” paragraph to each repeated-topic lesson and avoid re-teaching the same introductory definition.
+### 5. Curriculum and lesson sequence inconsistency
 
-### C. Some lessons need a stronger runnable path
+The old detailed curriculum is preserved in `CURRICULUM-ORIGINAL-BLUEPRINT.md`. The new `CURRICULUM.md` is a navigational index and no longer pretends that the old Day 16–50 schedule matches the current lesson files.
 
-The later production lessons describe important concepts but often stop before a complete local exercise. Prioritize:
-- Days 36–37: a minimal Prometheus scrape target, sample metrics, and a rule test;
-- Days 38–40: a working Docker/Compose/Actions path with explicit assumptions;
-- Days 41, 45, 47–48: reproducible security, observability, and evaluation tests;
-- Days 52–60: answer rubrics and evidence templates that can be used in an actual interview/job search.
+## Remaining verification boundaries
 
-### D. Project milestones should be tied together
+This revision is a **static repository and instructional-design improvement**, not a claim of end-to-end execution.
 
-The repository describes three flagship projects, but individual lessons sometimes ask for generic exercises without clearly saying which project receives the result.
+Still not verified in this pass:
+- Every Python example on Windows, macOS, and Linux.
+- Every YAML workflow against a live GitHub Actions run.
+- Every Docker/Compose stack against a clean machine.
+- Every external URL and third-party action at the time a learner runs it.
+- Whether ResearchAI, Research Agent, and XiaoYa 2.0 currently satisfy their lesson deliverables.
+- Whether any learner has completed the work or achieved job readiness.
 
-**Recommended fix:** Each lesson should label its output as one of:
-1. a standalone exercise;
-2. a feature added to ResearchAI;
-3. a feature added to Research Agent;
-4. a feature added to XiaoYa 2.0;
-5. a job-search artifact.
+The FastAPI example in the implementation guide is a teaching target. Its deliberate blocking route is there to demonstrate a failure mode; remove it from real async applications. Prometheus metric behavior, multi-worker configuration, and alert thresholds must be validated for the actual deployment. Image tags and third-party Actions must be pinned/verified for production security.
 
-The README should point to the exact project folder for each milestone.
+## Recommended next verification pass
 
-### E. Final ten days should be evidence-driven
+1. Clone the repository into a clean environment and run the production-lab steps in order.
+2. Run syntax checks and tests for every Python/YAML sample; fix examples that fail rather than marking them as complete.
+3. Add CI that validates Markdown links, Python formatting/tests, and workflow YAML.
+4. Verify the three flagship projects from clean install instructions and attach real test/demo evidence.
+5. Review external links and mutable model/action versions immediately before each daily lesson is used.
 
-The interview and job-search lessons have useful prompts and checklists, but should avoid implying that reading or writing a preparation note proves competence. Each PASS should link to a real code artifact, test, demo, recorded explanation, or actual application/interview result.
+## Completion rule
 
-## Technical freshness checked during this audit
-
-- Day 2 now uses the provider's current `deepseek-flash` model ID.
-- Day 46's displayed per-million-token price table matches the official DeepSeek pricing page checked on 2026-11-11. Pricing is mutable; always re-check the linked official page before using it for a real cost forecast.
-- Day 40 uses current major Docker Action lines in its example. Check the action release pages before copying into a production workflow, and pin verified commit SHAs where supply-chain assurance requires it.
-
-## What this audit does not claim
-
-- It does not prove every Python/YAML command works in every operating system.
-- It does not prove that every external resource URL remains available.
-- It does not verify that the three portfolio applications are implemented or deployed.
-- It does not mark any day complete in `PROGRESS.md`; progress requires evidence from the learner.
-
-## Recommended revision order
-
-1. Expand Days 36–43 into reproducible beginner-level labs.
-2. Expand Days 49 and 52–60 with concrete evidence templates and worked answers.
-3. Add explicit progression notes to repeated themes.
-4. Link every deliverable to one of the three actual project directories.
-5. Run the code examples in a clean environment and record the tested Python/package versions.
+Do not change `PROGRESS.md` to PASS based on repository edits performed by the assistant. The learner's implementation and evidence are required. The goal is a course that can guide and assess real engineering work—not a repository that merely looks complete.
