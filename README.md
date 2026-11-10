@@ -62,16 +62,15 @@ Every study day:
 ## Course files and how to use them
 
 - [Daily lessons (canonical)](Lessons/): the actual day-by-day teaching materials. Follow `Lessons/01.md` through `Lessons/60.md` in order; this folder is the source of truth for daily execution.
-- [60-day curriculum index](CURRICULUM.md): the current high-level map of the canonical daily lessons. The original blueprint is preserved in [CURRICULUM-ORIGINAL-BLUEPRINT.md](CURRICULUM-ORIGINAL-BLUEPRINT.md).
-- [Daily study workbook](curriculum/ALL-DAYS.md): supplementary workbook and historical planning material; do not use it to override the canonical daily lessons.
+- [60-day curriculum index](CURRICULUM.md): the current high-level map of the canonical daily lessons.
 - [Progress tracker](PROGRESS.md): current date mapping and completion evidence. The active reset is **2026-10-05 = Day 16**; do not use the old date mapping.
 - [Learning method](LEARNING-METHOD.md): daily learn-build-test-commit loop.
 - [Git for beginners](GIT-FOR-BEGINNERS.md): repository workflow for learners new to Git.
 - [Job search](JOB-SEARCH.md): target roles, application workflow, portfolio evidence, and interview topics.
-- [Day 01–40 archive](day01-day40-archive/README.md): historical daily lessons and corrected Day 16–40 date mapping.
+- [Day 35–40 archive](day01-day40-archive/README.md): unique expanded historical lessons retained for reference.
 - [Portfolio project index](projects/README.md): the three intended flagship projects.
 
-The curriculum/day-*.md files are retained as expanded lesson notes for selected days; they are not disposable duplicates of the shorter daily workbook. The archive contains unique expanded Day 35–40 lessons and is also retained.
+The obsolete `curriculum/` workbook and selected day notes were removed because they duplicated or conflicted with the canonical `Lessons/` sequence. The archive retains the unique expanded Day 35–40 historical lessons.
 
 ## Interview target
 
