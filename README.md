@@ -62,7 +62,7 @@ Every study day:
 ## Course files and how to use them
 
 - [Daily lessons (canonical)](Lessons/): the actual day-by-day teaching materials. Follow `Lessons/01.md` through `Lessons/60.md` in order; this folder is the source of truth for daily execution.
-- [60-day curriculum blueprint](CURRICULUM.md): the original high-level learning design. It may not reflect every change made to the live daily lessons; when day-level topics differ, follow `Lessons/`.
+- [60-day curriculum index](CURRICULUM.md): the current high-level map of the canonical daily lessons. The original blueprint is preserved in [CURRICULUM-ORIGINAL-BLUEPRINT.md](CURRICULUM-ORIGINAL-BLUEPRINT.md).
 - [Daily study workbook](curriculum/ALL-DAYS.md): supplementary workbook and historical planning material; do not use it to override the canonical daily lessons.
 - [Progress tracker](PROGRESS.md): current date mapping and completion evidence. The active reset is **2026-10-05 = Day 16**; do not use the old date mapping.
 - [Learning method](LEARNING-METHOD.md): daily learn-build-test-commit loop.
@@ -76,3 +76,15 @@ The curriculum/day-*.md files are retained as expanded lesson notes for selected
 ## Interview target
 
 Target roles include AI Application Engineer, LLM Engineer, AI Agent Engineer, AI Product Engineer, AI Developer, AI Solutions Engineer, and technical AI product roles.
+
+
+## Course quality and delivery guides
+
+The numbered lessons remain the daily source of truth. These companion documents close the gaps between lesson instructions and real project evidence:
+
+- [Project delivery map](PROJECT-DELIVERY-MAP.md): where each day's work belongs across ResearchAI, Research Agent, XiaoYa 2.0, standalone exercises, and job-search artifacts.
+- [Production engineering implementation guide](COURSE-IMPLEMENTATION-GUIDE.md): one consistent local FastAPI lab for metrics, alerts, Docker, Compose, CI, security, configuration, caching, and production quality.
+- [Job-search evidence kit](JOB-SEARCH-EVIDENCE-KIT.md): concrete templates and rubrics for Days 49–60. It distinguishes notes from tested code, demos, and external feedback.
+- [Course audit](COURSE-AUDIT.md): scope, fixes, remaining verification boundaries, and next priorities.
+
+**Completion rule:** a lesson file or a written note is not proof that a feature works. Mark progress only when the corresponding code, test, demo, or external outcome exists. Never invent benchmark numbers, project functionality, or job-search results.
